@@ -1,0 +1,25 @@
+server:
+  port: 8081
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  artemis:
+    mode: native
+    broker-url: tcp://localhost:61616
+    username: admin
+    password: admin
+  jms:
+    listener:
+      acknowledge-mode: auto
+
+app:
+  artemis:
+    queue-name: flight.queue
+  kafka:
+    topic:
+      success: flight-data-topic
+      dlt: flight-dlt-topic

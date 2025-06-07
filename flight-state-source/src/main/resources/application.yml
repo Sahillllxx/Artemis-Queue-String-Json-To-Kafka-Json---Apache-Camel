@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: flight-state-source
+  profiles:
+    active: dev
